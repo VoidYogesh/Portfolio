@@ -1,0 +1,474 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #030407;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    height: 80px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #1b1e25;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+
+/* Navigation */
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: #9da3af;
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: white;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    width: 90%;
+    max-width: 1200px;
+
+    min-height: 650px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+}
+
+
+/* ================= HERO TEXT ================= */
+
+.hero-content {
+    padding-right: 40px;
+}
+
+.small-text {
+    color: #3c82ff;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+h1 span {
+    color: #3180ff;
+}
+
+
+.description {
+    max-width: 430px;
+
+    color: #969daa;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.primary-button {
+    position: relative;
+    overflow: hidden;
+
+    background: #1468ff;
+    padding: 13px 20px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    border-radius: 3px;
+
+    transition: 0.3s;
+}
+
+/* Glossy shine */
+.primary-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.5),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: 0.5s;
+}
+
+.primary-button:hover::before {
+    left: 130%;
+}
+
+.primary-button:hover {
+    background: #3180ff;
+
+    box-shadow:
+        0 0 10px rgba(49, 128, 255, 0.7),
+        0 0 30px rgba(49, 128, 255, 0.4);
+
+    transform: translateY(-2px);
+}
+
+
+.secondary-button {
+    color: #aeb4c0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.secondary-button:hover {
+    color: white;
+
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.7);
+
+    transform: translateX(3px);
+}
+
+/* ================= HERO IMAGE ================= */
+
+/* ================= HERO IMAGE ================= */
+
+.hero-image {
+    height: 560px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* BLUE GLOW — BACK */
+
+.blue-glow {
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: 20px;
+    top: 80px;
+
+    background: #1262ff;
+    opacity: 0.25;
+
+    filter: blur(100px);
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+/* DIAGONAL STICK — BEHIND PHOTO */
+
+.blue-line {
+    position: absolute;
+
+    width: 25px;
+    height: 430px;
+
+    background: white;
+
+    right: -5%;
+    top: 40px;
+
+    transform: rotate(32deg);
+
+    box-shadow:
+        0 0 30px #1769ff;
+
+    z-index: 2;
+}
+
+
+/* PHOTO — IN FRONT */
+
+.photo-box {
+    position: absolute;
+
+    width: 70%;
+    height: 90%;
+
+    right: 5%;
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #17202d,
+            #050608
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3;
+}
+/* ================= NAME EFFECT ================= */
+
+/* ================= NAME ================= */
+
+.name-primary,
+.name-secondary {
+    display: inline-block;
+    cursor: default;
+    transition: 
+        color 0.3s ease,
+        text-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Yogesh D. */
+/* Starts WHITE → Hover BLUE */
+
+.name-primary {
+    color: #ffffff;
+}
+
+.name-primary:hover {
+    color: #3180ff;
+
+    text-shadow:
+        0 0 10px rgba(49, 128, 255, 0.8),
+        0 0 25px rgba(49, 128, 255, 0.5);
+
+    transform: translateY(-2px);
+}
+
+
+/* Rathod */
+/* Starts BLUE → Hover WHITE */
+
+.name-secondary {
+    color: #3180ff;
+}
+
+.name-secondary:hover {
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 25px rgba(255, 255, 255, 0.4);
+
+    transform: translateY(-2px);
+}
+
+.small-text {
+    color: #3c82ff;
+
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+
+.small-text:hover {
+    color: #6fa5ff;
+    transform: translateX(4px);
+}
+
+.description {
+    max-width: 430px;
+
+    color: #969daa;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+
+.description:hover {
+    color: #d5d9e1;
+    transform: translateX(3px);
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+
+    height: 80px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #1b1e25;
+}
+
+
+/* ================= LOGO ================= */
+
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    color: white;
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+}
+
+.logo:hover {
+    color: #3180ff;
+
+    transform: translateY(-1px);
+}
+
+
+/* ================= NAV LINKS ================= */
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    position: relative;
+
+    color: #9da3af;
+
+    font-size: 13px;
+    font-weight: bold;
+    
+
+    padding: 8px 0;
+
+    transition: color 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+/* Hover color */
+
+.navbar nav a:hover {
+    color: white;
+}
+
+
+/* Blue underline */
+
+.navbar nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #3180ff;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+}
+
+
+/* Show underline */
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
