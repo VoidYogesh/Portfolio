@@ -12,19 +12,10 @@ body {
 }
 
 body {
-    overflow-x: hidden;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     background: #030407;
     color: white;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 a {
@@ -36,19 +27,25 @@ a {
 /* ================= NAVBAR ================= */
 
 .navbar {
-    width: 90%;
-    max-width: 1200px;
+    width: 100vw;
+    max-width: none;
+
     height: 80px;
 
-    margin: auto;
+    margin-left: calc(50% - 50vw);
+    padding: 0 5%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid #1b1e25;
-}
+    background: transparent !important;
 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    position: relative;
+    z-index: 10;
+}
 
 /* Logo */
 
@@ -101,19 +98,6 @@ a {
     padding-right: 40px;
 }
 
-.small-text {
-    color: #3c82ff;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-
-    font-weight: bold;
-
-    margin-bottom: 20px;
-}
-
-
 h1 {
     font-size: clamp(55px, 7vw, 95px);
 
@@ -127,20 +111,6 @@ h1 {
 h1 span {
     color: #3180ff;
 }
-
-
-.description {
-    max-width: 430px;
-
-    color: #969daa;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    margin-bottom: 30px;
-}
-
 
 /* ================= BUTTONS ================= */
 
@@ -251,9 +221,7 @@ h1 span {
 /* ================= HERO IMAGE ================= */
 
 .hero-image {
-    height: 560px;
-    position: relative;
-    overflow: hidden;
+    background: transparent !important;
 }
 
 
@@ -262,19 +230,27 @@ h1 span {
 .blue-glow {
     position: absolute;
 
-    width: 400px;
-    height: 400px;
+    width: 850px;
+    height: 850px;
 
-    right: 20px;
-    top: 80px;
+    right: -180px;
+    top: -100px;
 
-    background: #1262ff;
-    opacity: 0.25;
+    background: radial-gradient(
+        circle,
+        rgba(20, 105, 255, 0.60) 0%,
+        rgba(20, 105, 255, 0.42) 25%,
+        rgba(20, 105, 255, 0.22) 45%,
+        rgba(20, 105, 255, 0.08) 65%,
+        transparent 80%
+    );
 
-    filter: blur(100px);
+    filter: blur(50px);
+
     border-radius: 50%;
 
     z-index: 1;
+    pointer-events: none;
 }
 
 
@@ -299,52 +275,6 @@ h1 span {
     z-index: 2;
 }
 
-
-/* PHOTO — IN FRONT */
-
-.photo-box {
-    position: absolute;
-
-    width: 70%;
-    height: 90%;
-
-    right: 5%;
-    bottom: 0;
-
-    background: linear-gradient(
-        145deg,
-        #17202d,
-        #050608
-    );
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 3;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        background 0.4s ease;
-
-    box-shadow:
-        0 0 30px rgba(18, 98, 255, 0.08);
-}
-.photo-box:hover {
-    transform: scale(1.02);
-
-    background: linear-gradient(
-        145deg,
-        #1d2d46,
-        #070b12
-    );
-
-    box-shadow:
-        0 0 30px rgba(18, 98, 255, 0.25),
-        0 0 70px rgba(18, 98, 255, 0.18),
-        0 0 120px rgba(18, 98, 255, 0.10);
-}s
 /* ================= NAME EFFECT ================= */
 
 /* ================= NAME ================= */
@@ -469,22 +399,6 @@ h1 span {
         0 0 8px rgba(213, 217, 225, 0.35),
         0 0 18px rgba(49, 128, 255, 0.2);
 }
-/* ================= NAVBAR ================= */
-
-.navbar {
-    width: 90%;
-    max-width: 1200px;
-
-    height: 80px;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 1px solid #1b1e25;
-}
-
 
 /* ================= LOGO ================= */
 
@@ -596,4 +510,38 @@ section {
 section.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+.photo-box {
+    position: absolute;
+
+    width: 85%;
+    height: 105%;
+
+    right: 0;
+    bottom: -5px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end; /* ye important hai */
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    z-index: 3;
+    overflow: visible;
+}
+
+.photo-box img {
+    width: 92%;
+    height: 92%;
+
+    object-fit: contain;
+    object-position: bottom right;
+
+    display: block;
+    background: transparent;
+
+    transform: translate(55px, -20px);
 }
