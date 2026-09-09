@@ -1,4 +1,19 @@
 /* ================= GENERAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
 
 * {
     margin: 0;
@@ -66,10 +81,10 @@ a {
 /* ================= HERO ================= */
 
 .hero {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
 
-    min-height: 650px;
+    min-height: 100vh;
 
     margin: auto;
 
@@ -139,9 +154,11 @@ h1 span {
 
 .primary-button {
     position: relative;
+    display: inline-block;
     overflow: hidden;
 
-    background: #1468ff;
+    background: #1469ff;
+
     padding: 13px 20px;
 
     font-family: 'Inter', sans-serif;
@@ -150,10 +167,17 @@ h1 span {
 
     border-radius: 3px;
 
-    transition: 0.3s;
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-/* Glossy shine */
+
+/* Glossy light */
+
 .primary-button::before {
     content: "";
 
@@ -174,41 +198,52 @@ h1 span {
 
     transform: skewX(-20deg);
 
-    transition: 0.5s;
+    transition: left 0.5s ease;
+}
+
+
+/* Hover */
+
+.primary-button:hover {
+    background: #3180ff;
+
+    transform: translateY(-5px) scale(1.06);
+
+    box-shadow:
+        0 0 12px rgba(49, 128, 255, 0.8),
+        0 0 30px rgba(49, 128, 255, 0.5),
+        0 0 50px rgba(49, 128, 255, 0.25);
 }
 
 .primary-button:hover::before {
     left: 130%;
 }
 
-.primary-button:hover {
-    background: #3180ff;
-
-    box-shadow:
-        0 0 10px rgba(49, 128, 255, 0.7),
-        0 0 30px rgba(49, 128, 255, 0.4);
-
-    transform: translateY(-2px);
-}
-
-
 .secondary-button {
+    display: inline-block;
+
     color: #aeb4c0;
 
     font-family: 'Inter', sans-serif;
     font-size: 11px;
     font-weight: 500;
 
-    transition: 0.3s;
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
 .secondary-button:hover {
-    color: white;
+    color: #ffffff;
+
+    transform: translateY(-5px) scale(1.06);
 
     text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.7);
-
-    transform: translateX(3px);
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(49, 128, 255, 0.5);
 }
 
 /* ================= HERO IMAGE ================= */
@@ -276,20 +311,40 @@ h1 span {
     right: 5%;
     bottom: 0;
 
-    background:
-        linear-gradient(
-            145deg,
-            #17202d,
-            #050608
-        );
+    background: linear-gradient(
+        145deg,
+        #17202d,
+        #050608
+    );
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     z-index: 3;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+
+    box-shadow:
+        0 0 30px rgba(18, 98, 255, 0.08);
 }
+.photo-box:hover {
+    transform: scale(1.02);
+
+    background: linear-gradient(
+        145deg,
+        #1d2d46,
+        #070b12
+    );
+
+    box-shadow:
+        0 0 30px rgba(18, 98, 255, 0.25),
+        0 0 70px rgba(18, 98, 255, 0.18),
+        0 0 120px rgba(18, 98, 255, 0.10);
+}s
 /* ================= NAME EFFECT ================= */
 
 /* ================= NAME ================= */
@@ -305,8 +360,21 @@ h1 span {
 }
 
 
-/* Yogesh D. */
-/* Starts WHITE → Hover BLUE */
+.name-primary,
+.name-secondary {
+    display: inline-block;
+    cursor: default;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+/* =========================
+   YOGESH D.
+   ========================= */
 
 .name-primary {
     color: #ffffff;
@@ -315,16 +383,18 @@ h1 span {
 .name-primary:hover {
     color: #3180ff;
 
-    text-shadow:
-        0 0 10px rgba(49, 128, 255, 0.8),
-        0 0 25px rgba(49, 128, 255, 0.5);
+    transform: translateY(-8px) scale(1.08);
 
-    transform: translateY(-2px);
+    text-shadow:
+        0 0 10px rgba(49, 128, 255, 0.9),
+        0 0 25px rgba(49, 128, 255, 0.7),
+        0 0 45px rgba(49, 128, 255, 0.4);
 }
 
 
-/* Rathod */
-/* Starts BLUE → Hover WHITE */
+/* =========================
+   RATHOD
+   ========================= */
 
 .name-secondary {
     color: #3180ff;
@@ -333,14 +403,17 @@ h1 span {
 .name-secondary:hover {
     color: #ffffff;
 
-    text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.8),
-        0 0 25px rgba(255, 255, 255, 0.4);
+    transform: translateY(-8px) scale(1.08);
 
-    transform: translateY(-2px);
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 25px rgba(255, 255, 255, 0.7),
+        0 0 45px rgba(49, 128, 255, 0.5);
 }
 
 .small-text {
+    display: inline-block;
+
     color: #3c82ff;
 
     font-size: 13px;
@@ -349,16 +422,27 @@ h1 span {
 
     margin-bottom: 20px;
 
-    transition: color 0.3s ease, transform 0.3s ease;
     cursor: default;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
 .small-text:hover {
     color: #6fa5ff;
-    transform: translateX(4px);
+
+    transform: translateY(-5px) scale(1.08);
+
+    text-shadow:
+        0 0 8px rgba(49, 128, 255, 0.8),
+        0 0 20px rgba(49, 128, 255, 0.5);
 }
 
 .description {
+    display: inline-block;
+
     max-width: 430px;
 
     color: #969daa;
@@ -368,15 +452,23 @@ h1 span {
 
     margin-bottom: 30px;
 
-    transition: color 0.3s ease, transform 0.3s ease;
     cursor: default;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
 .description:hover {
     color: #d5d9e1;
-    transform: translateX(3px);
-}
 
+    transform: translateY(-5px) scale(1.03);
+
+    text-shadow:
+        0 0 8px rgba(213, 217, 225, 0.35),
+        0 0 18px rgba(49, 128, 255, 0.2);
+}
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -397,21 +489,30 @@ h1 span {
 /* ================= LOGO ================= */
 
 .logo {
+    display: inline-block;
+
     font-size: 18px;
     font-weight: 800;
     letter-spacing: -1px;
 
     color: white;
-
-    transition: 0.3s ease;
-
     cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
 .logo:hover {
     color: #3180ff;
 
-    transform: translateY(-1px);
+    transform: translateY(-5px) scale(1.08);
+
+    text-shadow:
+        0 0 10px rgba(49, 128, 255, 0.9),
+        0 0 25px rgba(49, 128, 255, 0.6),
+        0 0 40px rgba(49, 128, 255, 0.3);
 }
 
 
@@ -425,24 +526,31 @@ h1 span {
 .navbar nav a {
     position: relative;
 
+    display: inline-block;
+
     color: #9da3af;
 
-    font-size: 13px;
-    font-weight: bold;
-    
+    font-size: 12px;
+    font-weight: 500;
 
     padding: 8px 0;
 
-    transition: color 0.3s ease;
-
     cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
-
-/* Hover color */
-
 .navbar nav a:hover {
-    color: white;
+    color: #ffffff;
+
+    transform: translateY(-5px) scale(1.08);
+
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.7),
+        0 0 20px rgba(49, 128, 255, 0.4);
 }
 
 
@@ -471,4 +579,21 @@ h1 span {
 
 .navbar nav a:hover::after {
     width: 100%;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+
+/* ================= GLOBAL SCROLL ANIMATION ================= */
+
+section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
 }
