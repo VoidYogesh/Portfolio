@@ -47,3 +47,12 @@ function resizeCanvas() {
         0
     );
 }
+//Adding Cursor effect In grid//
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
