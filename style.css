@@ -324,27 +324,6 @@ h1 span {
 }
 
 
-/* DIAGONAL STICK — BEHIND PHOTO */
-
-.blue-line {
-    position: absolute;
-
-    width: 25px;
-    height: 430px;
-
-    background: white;
-
-    right: -5%;
-    top: 40px;
-
-    transform: rotate(32deg);
-
-    box-shadow:
-        0 0 30px #1769ff;
-
-    z-index: 2;
-}
-
 
 /* ================= NAME ================= */
 
