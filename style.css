@@ -1,17 +1,22 @@
 /* ================= GENERAL ================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html,
 body {
     width: 100%;
     min-height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     background: #030407;
+    overflow-y: auto;
 }
 
 a {
@@ -23,12 +28,12 @@ a {
 /* ================= NAVBAR ================= */
 
 .navbar {
-    width: 100vw;
+    width: 100%;
     max-width: none;
 
     height: 80px;
 
-    margin-left: calc(50% - 50vw);
+    margin-left: 0;
     padding: 0 5%;
 
     display: flex;
@@ -43,360 +48,8 @@ a {
     z-index: 10;
 }
 
+
 /* Logo */
-
-.logo {
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: -1px;
-}
-
-
-/* Navigation */
-
-.navbar nav {
-    display: flex;
-    gap: 30px;
-}
-
-.navbar nav a {
-    color: #9da3af;
-    font-size: 13px;
-
-    transition: 0.3s;
-}
-
-.navbar nav a:hover {
-    color: white;
-}
-
-
-/* ================= HERO ================= */
-
-.hero {
-    width: 100%;
-    max-width: 1200px;
-
-    min-height: 100vh;
-
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-}
-
-
-/* ================= HERO TEXT ================= */
-
-.hero-content {
-    padding-right: 40px;
-}
-
-h1 {
-    font-size: clamp(55px, 7vw, 95px);
-
-    line-height: 0.9;
-
-    letter-spacing: -5px;
-
-    margin-bottom: 30px;
-}
-
-h1 span {
-    color: #3180ff;
-}
-
-/* ================= BUTTONS ================= */
-
-.hero-buttons {
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-}
-
-.primary-button {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-
-    background: #1469ff;
-
-    padding: 13px 20px;
-
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-
-    border-radius: 3px;
-
-    cursor: pointer;
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* Glossy light */
-
-.primary-button::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -100%;
-
-    width: 60%;
-    height: 100%;
-
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.5),
-        transparent
-    );
-
-    transform: skewX(-20deg);
-
-    transition: left 0.5s ease;
-}
-
-
-/* Hover */
-
-.primary-button:hover {
-    background: #3180ff;
-
-    transform: translateY(-5px) scale(1.06);
-
-    box-shadow:
-        0 0 12px rgba(49, 128, 255, 0.8),
-        0 0 30px rgba(49, 128, 255, 0.5),
-        0 0 50px rgba(49, 128, 255, 0.25);
-}
-
-.primary-button:hover::before {
-    left: 130%;
-}
-
-.secondary-button {
-    display: inline-block;
-
-    color: #aeb4c0;
-
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-
-    cursor: pointer;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease,
-        text-shadow 0.3s ease;
-}
-
-.secondary-button:hover {
-    color: #ffffff;
-
-    transform: translateY(-5px) scale(1.06);
-
-    text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(49, 128, 255, 0.5);
-}
-
-/* ================= HERO IMAGE ================= */
-
-/* ================= HERO IMAGE ================= */
-
-.hero-image {
-    background: transparent !important;
-}
-
-
-/* BLUE GLOW — BACK */
-
-.blue-glow {
-    position: absolute;
-
-    width: 850px;
-    height: 850px;
-
-    right: -180px;
-    top: -100px;
-
-    background: radial-gradient(
-        circle,
-        rgba(20, 105, 255, 0.60) 0%,
-        rgba(20, 105, 255, 0.42) 25%,
-        rgba(20, 105, 255, 0.22) 45%,
-        rgba(20, 105, 255, 0.08) 65%,
-        transparent 80%
-    );
-
-    filter: blur(50px);
-
-    border-radius: 50%;
-
-    z-index: 1;
-    pointer-events: none;
-}
-
-
-/* DIAGONAL STICK — BEHIND PHOTO */
-
-.blue-line {
-    position: absolute;
-
-    width: 25px;
-    height: 430px;
-
-    background: white;
-
-    right: -5%;
-    top: 40px;
-
-    transform: rotate(32deg);
-
-    box-shadow:
-        0 0 30px #1769ff;
-
-    z-index: 2;
-}
-
-/* ================= NAME EFFECT ================= */
-
-/* ================= NAME ================= */
-
-.name-primary,
-.name-secondary {
-    display: inline-block;
-    cursor: default;
-    transition: 
-        color 0.3s ease,
-        text-shadow 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-.name-primary,
-.name-secondary {
-    display: inline-block;
-    cursor: default;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease,
-        text-shadow 0.3s ease;
-}
-
-
-/* =========================
-   YOGESH D.
-   ========================= */
-
-.name-primary {
-    color: #ffffff;
-}
-
-.name-primary:hover {
-    color: #3180ff;
-
-    transform: translateY(-8px) scale(1.08);
-
-    text-shadow:
-        0 0 10px rgba(49, 128, 255, 0.9),
-        0 0 25px rgba(49, 128, 255, 0.7),
-        0 0 45px rgba(49, 128, 255, 0.4);
-}
-
-
-/* =========================
-   RATHOD
-   ========================= */
-
-.name-secondary {
-    color: #3180ff;
-}
-
-.name-secondary:hover {
-    color: #ffffff;
-
-    transform: translateY(-8px) scale(1.08);
-
-    text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.9),
-        0 0 25px rgba(255, 255, 255, 0.7),
-        0 0 45px rgba(49, 128, 255, 0.5);
-}
-
-.small-text {
-    display: inline-block;
-
-    color: #3c82ff;
-
-    font-size: 13px;
-    letter-spacing: 3px;
-    font-weight: bold;
-
-    margin-bottom: 20px;
-
-    cursor: default;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease,
-        text-shadow 0.3s ease;
-}
-
-.small-text:hover {
-    color: #6fa5ff;
-
-    transform: translateY(-5px) scale(1.08);
-
-    text-shadow:
-        0 0 8px rgba(49, 128, 255, 0.8),
-        0 0 20px rgba(49, 128, 255, 0.5);
-}
-
-.description {
-    display: inline-block;
-
-    max-width: 430px;
-
-    color: #969daa;
-
-    font-size: 14px;
-    line-height: 1.7;
-
-    margin-bottom: 30px;
-
-    cursor: default;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease,
-        text-shadow 0.3s ease;
-}
-
-.description:hover {
-    color: #d5d9e1;
-
-    transform: translateY(-5px) scale(1.03);
-
-    text-shadow:
-        0 0 8px rgba(213, 217, 225, 0.35),
-        0 0 18px rgba(49, 128, 255, 0.2);
-}
-
-/* ================= LOGO ================= */
 
 .logo {
     display: inline-block;
@@ -404,8 +57,8 @@ h1 span {
     font-size: 18px;
     font-weight: 800;
     letter-spacing: -1px;
-
     color: white;
+
     cursor: pointer;
 
     transition:
@@ -426,7 +79,7 @@ h1 span {
 }
 
 
-/* ================= NAV LINKS ================= */
+/* Navigation */
 
 .navbar nav {
     display: flex;
@@ -491,13 +144,334 @@ h1 span {
     width: 100%;
 }
 
-/* ================= SCROLL ANIMATION ================= */
 
-/* ================= GLOBAL SCROLL ANIMATION ================= */
+/* ================= HERO ================= */
+
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    min-height: calc(100vh - 80px);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+
+/* ================= HERO TEXT ================= */
+
+.hero-content {
+    padding-right: 40px;
+}
+
+h1 {
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+h1 span {
+    color: #3180ff;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.primary-button {
+    position: relative;
+
+    display: inline-block;
+
+    overflow: hidden;
+
+    background: #1469ff;
+
+    padding: 13px 20px;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Glossy light */
+
+.primary-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.5),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.5s ease;
+}
+
+
+/* Hover */
+
+.primary-button:hover {
+    background: #3180ff;
+
+    transform: translateY(-5px) scale(1.06);
+
+    box-shadow:
+        0 0 12px rgba(49, 128, 255, 0.8),
+        0 0 30px rgba(49, 128, 255, 0.5),
+        0 0 50px rgba(49, 128, 255, 0.25);
+}
+
+.primary-button:hover::before {
+    left: 130%;
+}
+
+
+.secondary-button {
+    display: inline-block;
+
+    color: #aeb4c0;
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.secondary-button:hover {
+    color: #ffffff;
+
+    transform: translateY(-5px) scale(1.06);
+
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(49, 128, 255, 0.5);
+}
+
+
+/* ================= HERO IMAGE ================= */
+
+.hero-image {
+    background: transparent !important;
+}
+
+
+/* BLUE GLOW — BACK */
+
+.blue-glow {
+    position: absolute;
+
+    width: 850px;
+    height: 850px;
+
+    right: -180px;
+    top: -100px;
+
+    background: radial-gradient(
+        circle,
+        rgba(20, 105, 255, 0.60) 0%,
+        rgba(20, 105, 255, 0.42) 25%,
+        rgba(20, 105, 255, 0.22) 45%,
+        rgba(20, 105, 255, 0.08) 65%,
+        transparent 80%
+    );
+
+    filter: blur(50px);
+
+    border-radius: 50%;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* DIAGONAL STICK — BEHIND PHOTO */
+
+.blue-line {
+    position: absolute;
+
+    width: 25px;
+    height: 430px;
+
+    background: white;
+
+    right: -5%;
+    top: 40px;
+
+    transform: rotate(32deg);
+
+    box-shadow:
+        0 0 30px #1769ff;
+
+    z-index: 2;
+}
+
+
+/* ================= NAME ================= */
+
+.name-primary,
+.name-secondary {
+    display: inline-block;
+
+    cursor: default;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+/* YOGESH D. */
+
+.name-primary {
+    color: #ffffff;
+}
+
+.name-primary:hover {
+    color: #3180ff;
+
+    transform: translateY(-8px) scale(1.08);
+
+    text-shadow:
+        0 0 10px rgba(49, 128, 255, 0.9),
+        0 0 25px rgba(49, 128, 255, 0.7),
+        0 0 45px rgba(49, 128, 255, 0.4);
+}
+
+
+/* RATHOD */
+
+.name-secondary {
+    color: #3180ff;
+}
+
+.name-secondary:hover {
+    color: #ffffff;
+
+    transform: translateY(-8px) scale(1.08);
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 25px rgba(255, 255, 255, 0.7),
+        0 0 45px rgba(49, 128, 255, 0.5);
+}
+
+
+/* ================= SMALL TEXT ================= */
+
+.small-text {
+    display: inline-block;
+
+    color: #3c82ff;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+    cursor: default;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.small-text:hover {
+    color: #6fa5ff;
+
+    transform: translateY(-5px) scale(1.08);
+
+    text-shadow:
+        0 0 8px rgba(49, 128, 255, 0.8),
+        0 0 20px rgba(49, 128, 255, 0.5);
+}
+
+
+/* ================= DESCRIPTION ================= */
+
+.description {
+    display: inline-block;
+
+    max-width: 430px;
+
+    color: #969daa;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+    cursor: default;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.description:hover {
+    color: #d5d9e1;
+
+    transform: translateY(-5px) scale(1.03);
+
+    text-shadow:
+        0 0 8px rgba(213, 217, 225, 0.35),
+        0 0 18px rgba(49, 128, 255, 0.2);
+}
+
+
+/* ================= SCROLL ANIMATION ================= */
 
 section {
     opacity: 0;
+
     transform: translateY(60px);
+
     transition:
         opacity 0.8s ease,
         transform 0.8s ease;
@@ -505,8 +479,12 @@ section {
 
 section.show {
     opacity: 1;
+
     transform: translateY(0);
 }
+
+
+/* ================= PHOTO BOX ================= */
 
 .photo-box {
     position: absolute;
@@ -518,41 +496,72 @@ section.show {
     bottom: -5px;
 
     display: flex;
+
     align-items: flex-end;
-    justify-content: flex-end; /* ye important hai */
+
+    justify-content: flex-end;
 
     background: transparent !important;
+
     border: none !important;
+
     box-shadow: none !important;
 
     z-index: 3;
+
     overflow: visible;
 }
 
 .photo-box img {
     width: 92%;
     height: 92%;
-
     object-fit: contain;
     object-position: bottom right;
-
     display: block;
     background: transparent;
 
     transform: translate(55px, -20px);
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 60%,
+        rgba(0, 0, 0, 0.95) 72%,
+        rgba(0, 0, 0, 0.55) 88%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 60%,
+        rgba(0, 0, 0, 0.95) 72%,
+        rgba(0, 0, 0, 0.55) 88%,
+        transparent 100%
+    );
 }
-/* ================= CURSOR MAGNETIC GRID ================= */
+
+
+/* ================= CURSOR GRID ================= */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
 #cursorGrid {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-}
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
 
-body > *:not(#cursorGrid) {
-    position: relative;
-    z-index: 1;
+    width: 100vw !important;
+    height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    pointer-events: none !important;
+    z-index: 0;
 }
